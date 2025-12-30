@@ -19,6 +19,6 @@ COPY --from=build --chown=appuser:appgroup /app/target/*.jar app.jar
 USER appuser
 
 # Render uses PORT environment variable
-EXPOSE 8080 8000
+EXPOSE 8080 
 
 ENTRYPOINT ["java", "-Djava.security.egd=file:/dev/./urandom", "-jar", "app.jar"]
