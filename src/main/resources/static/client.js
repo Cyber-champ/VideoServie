@@ -1,5 +1,7 @@
-const LOCAL_IP_ADDRESS = window.location.hostname;
-let socket = io.connect(`http://${LOCAL_IP_ADDRESS}:8000`);
+const socket = io(window.location.origin, {
+  transports: ["websocket"]
+});
+
 
 const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
